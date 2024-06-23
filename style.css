@@ -36,6 +36,14 @@ img:hover {
    cursor: pointer;
 }
 
+.container.show-music-panel {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+   height: 100vh;
+}
+
 .container:not(.show-music-panel) {
    display: flex;
    justify-content: center;
@@ -45,20 +53,24 @@ img:hover {
 }
 
 .container:not(.show-music-panel) #bg-music {
-   display: none;
+   visibility: hidden;
+   opacity: 0;
+   transition: all .8s;
 }
 
-.container.show-music-panel {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   grid-template-rows: 1fr max-content;
-   align-items: center;
-
-   height: 100vh;
+.container.show-music-panel #bg-music {
+   visibility: visible;
+   opacity: 1;
+   transition: all .8s;
 }
 
 .container.show-music-panel #timer {
-   justify-self: end;
+   transform: translateX(-13.125rem);
+   transition: transform 1s;
+}
+
+#timer {
+   transition: transform 1s;
 }
 
 .timer-wrapper {
@@ -79,6 +91,9 @@ img:hover {
 }
 
 #bg-music {
+   position: absolute;
+   left: calc(50vw + 60px);
+
    display: flex;
    flex-wrap: wrap;
    gap: 2rem;
