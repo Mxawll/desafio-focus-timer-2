@@ -36,7 +36,7 @@ img:hover {
    cursor: pointer;
 }
 
-.container.show-music-panel {
+#app.show-music-panel {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -44,7 +44,7 @@ img:hover {
    height: 100vh;
 }
 
-.container:not(.show-music-panel) {
+#app:not(.show-music-panel) {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -52,19 +52,19 @@ img:hover {
    height: 100vh;
 }
 
-.container:not(.show-music-panel) #bg-music {
+#app:not(.show-music-panel) #bg-music {
    visibility: hidden;
    opacity: 0;
    transition: all .8s;
 }
 
-.container.show-music-panel #bg-music {
+#app.show-music-panel #bg-music {
    visibility: visible;
    opacity: 1;
    transition: all .8s;
 }
 
-.container.show-music-panel #timer {
+#app.show-music-panel #timer {
    transform: translateX(-13.125rem);
    transition: transform 1s;
 }
