@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Focus timer 2.0</title>
+
+      <script src="./src/main.js" defer type="module"></script>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="container">
+         <section id="timer">
+            <div class="timer-wrapper">
+               <span id="minutes">25</span>
+               <span>:</span>
+               <span id="seconds">00</span>
+            </div>
+
+            <div id="controls">
+               <button id="play" title="Iniciar timer" data-action="toggleRunning">
+                  <img src="./assets/play.png" alt="Botão de play">
+               </button>
+               <button id="pause" title="Pausar timer" data-action="toggleRunning">
+                  <img src="./assets/pause.png" alt="Botão de pause">
+               </button>
+               <button id="reset" title="Resetar timer" data-action="reset">
+                  <img src="./assets/stop.png" alt="Botão de resetar">
+               </button>
+               <button id="music" title="Reproduzir música" data-action="togglePanelMusic">
+                  <img src="./assets/music.png" alt="Botão de reproduzir música">
+               </button>
+               <button id="increment" title="Incrementar 5 minutos" data-action="increment">
+                  <img src="./assets/plus.png" alt="Botão de incrementar 5 minutos">
+               </button>
+               <button id="decrement" title="Decrementar 5 minutos" data-action="decrement">
+                  <img src="./assets/minus.png" alt="Botão de decrementar 5 minutos">
+               </button>
+            </div>
+         </section>
+
+         <section id="bg-music">
+            <img 
+               data-action="tree"
+               class="card" id="tree"
+               src="./assets/tree.png" 
+               alt="Botão música de background, floresta"
+            />
+            <img 
+               data-action="cloud"
+               class="card" id="cloud" 
+               src="./assets/cloud.png" 
+               alt="Botão música de background, chuva"
+            />
+            <img 
+               data-action="coffe-shop"
+               class="card" id="coffe-shop" 
+               src="./assets/coffe-shop.png" 
+               alt="Botão música de background, cafeteria"
+            />
+            <img 
+               data-action="bonfire"
+               class="card" id="bonfire" 
+               src="./assets/bonfire.png" 
+               alt="Botão música de background, fogueira"
+            />
+         </section>
+      </div>
+      <footer>
+         <span class="credits">
+            Icons made by 
+            <a href="https://www.flaticon.com/authors/freepik" target="_blank" title="Freepik">Freepik</a> 
+            and
+            <a href="https://www.flaticon.com/authors/good-ware" target="_blank" title="Good Ware">Good Ware</a>
+            from
+            <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">www.flaticon.com</a>
+         </span>
+      </footer>
+   </body>
+</html>

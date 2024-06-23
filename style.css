@@ -1,0 +1,115 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   font-size: clamp(60%, 1% + 2vw, 100%);
+   
+   --off-white-bg: #edf6f9;
+   --blue-gray-timer: #354e61;
+   --turquoise-link-credits: #00aaff;
+   --light-blue-bg-music-buttons: #d7edf8;
+   --light-blue-active-bg-music-buttons: #85d0f6;
+}
+
+html:not(.running ) #pause,
+html:not(.running ) #reset,
+html.running.paused  #pause,
+html.running:not(.paused) #play {
+   display: none;
+}
+
+body {
+   font-family: "Comic Neue", sans-serif;
+   background: var(--off-white-bg);
+}
+
+button {
+   background: transparent;
+   border: none;
+}
+
+button:hover,
+img:hover {
+   cursor: pointer;
+}
+
+.container:not(.show-music-panel) {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   height: 100vh;
+}
+
+.container:not(.show-music-panel) #bg-music {
+   display: none;
+}
+
+.container.show-music-panel {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr max-content;
+   align-items: center;
+
+   height: 100vh;
+}
+
+.container.show-music-panel #timer {
+   justify-self: end;
+}
+
+.timer-wrapper {
+   display: flex;
+
+   color: var(--blue-gray-timer);
+   font-size: 7.875rem;
+   font-weight: 500;
+}
+
+#controls {
+   display: flex;
+   justify-content: space-around;
+}
+
+#controls button img {
+   width: 3rem;
+}
+
+#bg-music {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
+   width: 19rem;
+}
+
+#bg-music .card {
+   box-sizing: content-box;
+
+   width: 3.5rem;
+   padding: 1.875rem;
+
+   background: var(--light-blue-bg-music-buttons);
+   border-radius: 2rem;
+}
+
+#bg-music .card.active {
+   background: var(--light-blue-active-bg-music-buttons);
+}
+
+/* footer */
+footer {
+   padding: .75rem;
+   text-align: center;
+}
+
+.credits a {
+   color: var(--turquoise-link-credits);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+   display: none;
+}
