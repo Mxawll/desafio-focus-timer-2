@@ -1,10 +1,19 @@
-import state from "./focus-timer/state.js"
+import state from "./state.js"
 import * as actions from "./actions.js"
 
 
 export function countdown() {
+   clearTimeout(state.countDownId)
+
+   if (!state.isRunning) {
+      return;
+   }
+
    let minutes = document.getElementById("minutes")
    let seconds = document.getElementById("seconds")
+
+   minutes = Number(minutes.textContent)
+   seconds = Number(seconds.textContent)
 
    seconds--
 
@@ -17,6 +26,9 @@ export function countdown() {
       actions.reset()
       return;
    }
+
+   updateDisplay(minutes, seconds)
+   state.countDownId = setTimeout(countdown, 100)
 }
 
 export function updateDisplay(minutes, seconds) {
