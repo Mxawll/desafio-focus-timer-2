@@ -22,16 +22,16 @@
             </div>
 
             <div id="controls">
-               <button id="play" title="Iniciar timer" data-action="toggleRunning">
+               <button id="play" title="Iniciar timer" data-action="running">
                   <img src="./assets/play.png" alt="Botão de play">
                </button>
-               <button id="pause" title="Pausar timer" data-action="toggleRunning">
+               <button id="pause" title="Pausar timer" data-action="pause">
                   <img src="./assets/pause.png" alt="Botão de pause">
                </button>
                <button id="reset" title="Resetar timer" data-action="reset">
                   <img src="./assets/stop.png" alt="Botão de resetar">
                </button>
-               <button id="music" title="Reproduzir música" data-action="togglePanelMusic">
+               <button id="music" title="Reproduzir música" data-action="toggleMusicPanel">
                   <img src="./assets/music.png" alt="Botão de reproduzir música">
                </button>
                <button id="increment" title="Incrementar 5 minutos" data-action="increment">
@@ -43,31 +43,35 @@
             </div>
          </section>
 
-         <section id="bg-music">
-            <img 
-               data-action="tree"
-               class="card" id="tree"
-               src="./assets/tree.png" 
-               alt="Botão música de background, floresta"
-            />
-            <img 
-               data-action="cloud"
-               class="card" id="cloud" 
-               src="./assets/cloud.png" 
-               alt="Botão música de background, chuva"
-            />
-            <img 
-               data-action="coffe-shop"
-               class="card" id="coffe-shop" 
-               src="./assets/coffe-shop.png" 
-               alt="Botão música de background, cafeteria"
-            />
-            <img 
-               data-action="bonfire"
-               class="card" id="bonfire" 
-               src="./assets/bonfire.png" 
-               alt="Botão música de background, fogueira"
-            />
+         <section id="music-panel">
+            <button data-action="tree" class="card">
+               <img 
+                  id="tree"
+                  src="./assets/tree.png" 
+                  alt="Botão música de background, floresta"
+               />
+            </button>
+            <button data-action="cloud" class="card">
+               <img 
+                  id="cloud" 
+                  src="./assets/cloud.png" 
+                  alt="Botão música de background, chuva"
+               />
+            </button>
+            <button data-action="coffe-shop" class="card">
+               <img
+                  id="coffe-shop" 
+                  src="./assets/coffe-shop.png" 
+                  alt="Botão música de background, cafeteria"
+               />
+            </button>
+            <button data-action="bonfire" class="card">
+               <img 
+                  id="bonfire"
+                  src="./assets/bonfire.png" 
+                  alt="Botão música de background, fogueira"
+               />
+            </button>
          </section>
       </div>
       <footer>

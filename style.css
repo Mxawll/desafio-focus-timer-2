@@ -10,8 +10,8 @@
    --off-white-bg: #edf6f9;
    --blue-gray-timer: #354e61;
    --turquoise-link-credits: #00aaff;
-   --light-blue-bg-music-buttons: #d7edf8;
-   --light-blue-active-bg-music-buttons: #85d0f6;
+   --light-blue-music-buttons: #d7edf8;
+   --light-blue-active-music-buttons: #85d0f6;
 }
 
 html:not(.running ) #pause,
@@ -31,8 +31,7 @@ button {
    border: none;
 }
 
-button:hover,
-img:hover {
+button:hover {
    cursor: pointer;
 }
 
@@ -52,13 +51,13 @@ img:hover {
    height: 100vh;
 }
 
-#app:not(.show-music-panel) #bg-music {
+#app:not(.show-music-panel) #music-panel {
    visibility: hidden;
    opacity: 0;
    transition: all .8s;
 }
 
-#app.show-music-panel #bg-music {
+#app.show-music-panel #music-panel {
    visibility: visible;
    opacity: 1;
    transition: all .8s;
@@ -88,9 +87,10 @@ img:hover {
 
 #controls button img {
    width: 3rem;
+   pointer-events: none;
 }
 
-#bg-music {
+#music-panel {
    position: absolute;
    left: calc(50vw + 60px);
 
@@ -100,18 +100,21 @@ img:hover {
    width: 19rem;
 }
 
-#bg-music .card {
-   box-sizing: content-box;
+#music-panel .card {
+   padding: 2rem;
 
-   width: 3.5rem;
-   padding: 1.875rem;
-
-   background: var(--light-blue-bg-music-buttons);
+   background: var(--light-blue-music-buttons);
    border-radius: 2rem;
 }
 
-#bg-music .card.active {
-   background: var(--light-blue-active-bg-music-buttons);
+.card img {
+   width: 3rem;
+   pointer-events: none;
+}
+
+#music-panel .card.active {
+   background: var(--light-blue-active-music-buttons);
+   border-radius: 50%;
 }
 
 /* footer */

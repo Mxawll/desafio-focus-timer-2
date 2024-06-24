@@ -1,16 +1,3 @@
-function countdown() {
-   
-}
+import * as focusTimer from "./focus-timer/events.js"
 
-
-const music = document.getElementById("music")
-
-
-function showMusicPanel() {
-   const app = document.getElementById("app")
-   app.classList.toggle("show-music-panel")
-}
-
-music.addEventListener("click", () => {
-   showMusicPanel()
-})
+focusTimer.registerControls()
