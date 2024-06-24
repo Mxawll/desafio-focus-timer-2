@@ -26,9 +26,35 @@ export function reset() {
    html.classList.remove("running")
    html.classList.remove("paused")
 
-   updateDisplay()
+   updateDisplay(25, 0)
 }
 
 export function toggleMusicPanel() {
    app.classList.toggle("show-music-panel")
+}
+
+export function increment() {
+   let minutes = document.getElementById("minutes")
+   minutes = Number(minutes.textContent)
+
+   if (minutes > 20) {
+      return;
+   }
+
+   minutes = minutes + 5
+
+   updateDisplay(minutes, state.seconds)
+}
+
+export function decrement() {
+   let minutes = document.getElementById("minutes")
+   minutes = Number(minutes.textContent)
+
+   if (minutes <= 5) {
+      return;
+   }
+
+   minutes = minutes - 5
+
+   updateDisplay(minutes, state.seconds)
 }

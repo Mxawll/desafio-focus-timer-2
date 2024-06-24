@@ -27,6 +27,9 @@ export function countdown() {
       return;
    }
 
+   state.minutes = minutes
+   state.seconds = seconds
+
    updateDisplay(minutes, seconds)
    state.countDownId = setTimeout(countdown, 1000)
 }
