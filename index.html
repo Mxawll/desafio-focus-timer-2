@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
    <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
 
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +11,7 @@
       <link rel="stylesheet" href="style.css">
    </head>
    <body>
-      <div class="show-music-panel" id="app">
+      <div id="app">
          <section id="timer">
             <div class="timer-wrapper">
                <span id="minutes">25</span>
@@ -22,16 +20,16 @@
             </div>
 
             <div id="controls">
-               <button id="play" title="Iniciar timer" data-action="running">
+               <button id="play" title="Iniciar cronômetro" data-action="running">
                   <img src="./assets/play.png" alt="Botão de play">
                </button>
-               <button id="pause" title="Pausar timer" data-action="pause">
+               <button id="pause" title="Parar cronômetro" data-action="pause">
                   <img src="./assets/pause.png" alt="Botão de pause">
                </button>
-               <button id="reset" title="Resetar timer" data-action="reset">
+               <button id="reset" title="Reiniciar cronômetro" data-action="reset">
                   <img src="./assets/stop.png" alt="Botão de resetar">
                </button>
-               <button id="music" title="Reproduzir música" data-action="toggleMusicPanel">
+               <button id="music" title="Abrir painel de músicas" data-action="toggleMusicPanel">
                   <img src="./assets/music.png" alt="Botão de reproduzir música">
                </button>
                <button id="increment" title="Incrementar 5 minutos" data-action="increment">

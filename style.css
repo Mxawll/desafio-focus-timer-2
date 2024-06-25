@@ -22,7 +22,7 @@ html.running:not(.paused) #play {
 }
 
 body {
-   font-family: "Comic Neue", sans-serif;
+   font-family: "Comic Mono", monospace;
    background: var(--off-white-bg);
 }
 
@@ -76,7 +76,7 @@ button:hover {
    display: flex;
 
    color: var(--blue-gray-timer);
-   font-size: 7.875rem;
+   font-size: 115px;
    font-weight: 500;
 }
 
