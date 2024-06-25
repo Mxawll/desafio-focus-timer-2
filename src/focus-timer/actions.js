@@ -1,8 +1,20 @@
 import state from "./state.js"
 import { countdown, updateDisplay } from "./timer.js"
+import { sounds } from "./sounds.js"
 
 const app = document.getElementById("app")
 const html = document.documentElement
+
+const tree = document.getElementById("tree")
+const cloud = document.getElementById("cloud")
+const coffeShop = document.getElementById("coffee-shop")
+const bonfire = document.getElementById("bonfire")
+const musicPanel = document.getElementById("music-panel")
+
+
+const musicButtons = [
+   tree, cloud, coffeShop, bonfire
+]
 
 
 export function running() {
@@ -67,4 +79,53 @@ export function decrement() {
    minutes = minutes - 5
 
    updateDisplay(minutes, state.seconds)
+}
+
+export function activeButton() {
+   musicPanel.addEventListener("click", event => {
+      const isActive = event.target.classList.contains("active")
+
+      if (isActive) {
+         event.target.classList.remove("active")
+         return;
+      }
+
+      for (const element of musicButtons) {
+         element.classList.remove("active")
+      }
+
+      event.target.classList.add("active")
+   })
+}
+
+export function activeMusic() {
+   musicPanel.addEventListener("click", event => {
+      const isNotActive = !event.target.classList.contains("active")
+      const music = event.target.dataset.action
+
+      if (isNotActive) {
+         sounds[music].pause()
+         return;
+      }
+
+      for (const sound in sounds) {
+         sounds[sound].pause()
+      }
+      
+      switch (music) {
+         case "forest":
+            sounds.forest.play()
+            break;
+         case "rain":
+            sounds.rain.play()
+            break;
+         case "coffeeShop":
+            sounds.coffeeShop.play()
+            break;
+         case "bonfire":
+            sounds.bonfire.play()
+            break;
+      }
+
+   })
 }
