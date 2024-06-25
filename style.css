@@ -5,8 +5,8 @@
 }
 
 :root {
-   font-size: clamp(60%, 1% + 2vw, 100%);
-   
+   font-size: clamp(80%, 1% + 2vw, 100%);
+
    --off-white-bg: #edf6f9;
    --blue-gray-timer: #354e61;
    --turquoise-link-credits: #00aaff;
@@ -35,15 +35,7 @@ button:hover {
    cursor: pointer;
 }
 
-#app.show-music-panel {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   
-   height: 100vh;
-}
-
-#app:not(.show-music-panel) {
+#app {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -54,18 +46,15 @@ button:hover {
 #app:not(.show-music-panel) #music-panel {
    visibility: hidden;
    opacity: 0;
-   transition: all .8s;
 }
 
 #app.show-music-panel #music-panel {
    visibility: visible;
    opacity: 1;
-   transition: all .8s;
 }
 
 #app.show-music-panel #timer {
    transform: translateX(-13.125rem);
-   transition: transform 1s;
 }
 
 #timer {
@@ -76,7 +65,7 @@ button:hover {
    display: flex;
 
    color: var(--blue-gray-timer);
-   font-size: 115px;
+   font-size: 7.1875rem;
    font-weight: 500;
 }
 
@@ -97,7 +86,9 @@ button:hover {
    display: flex;
    flex-wrap: wrap;
    gap: 2rem;
-   width: 19rem;
+   width: 16rem;
+
+   transition: visibility .8s, opacity .8s;
 }
 
 #music-panel .card {
@@ -105,7 +96,7 @@ button:hover {
 
    background: var(--light-blue-music-buttons);
    border-radius: 2rem;
-   transition: .5s;
+   transition: background .5s, border-radius .5s;
 }
 
 .card img {
@@ -116,7 +107,6 @@ button:hover {
 #music-panel .card.active {
    background: var(--light-blue-active-music-buttons);
    border-radius: 50%;
-   transition: .5s;
 }
 
 /* footer */
@@ -132,4 +122,16 @@ footer {
 /* scrollbar */
 ::-webkit-scrollbar {
    display: none;
+}
+
+/* media queries */
+@media (max-width: 48rem) {
+   #app.show-music-panel #timer {
+      transform: translateY(-6rem);
+   }
+
+   #music-panel {
+      top: calc(50vh + 60px);
+      left: unset;
+   }
 }
