@@ -105,6 +105,7 @@ button:hover {
 
    background: var(--light-blue-music-buttons);
    border-radius: 2rem;
+   transition: .5s;
 }
 
 .card img {
@@ -115,6 +116,7 @@ button:hover {
 #music-panel .card.active {
    background: var(--light-blue-active-music-buttons);
    border-radius: 50%;
+   transition: .5s;
 }
 
 /* footer */
