@@ -34,6 +34,10 @@ export function toggleMusicPanel() {
 }
 
 export function increment() {
+   if (state.isRunning === true) {
+      return
+   }
+
    let minutes = document.getElementById("minutes")
    minutes = Number(minutes.textContent)
 
@@ -41,12 +45,17 @@ export function increment() {
       return;
    }
 
-   minutes = minutes + 5
+   state.seconds = 0
+   minutes += 5 
 
    updateDisplay(minutes, state.seconds)
 }
 
 export function decrement() {
+   if (state.isRunning === true) {
+      return
+   }
+
    let minutes = document.getElementById("minutes")
    minutes = Number(minutes.textContent)
 
@@ -54,6 +63,7 @@ export function decrement() {
       return;
    }
 
+   state.seconds = 0
    minutes = minutes - 5
 
    updateDisplay(minutes, state.seconds)
